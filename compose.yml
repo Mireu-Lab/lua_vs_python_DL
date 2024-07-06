@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  lua_vs_python_dl:
+    build: .
+    ports:
+      - "2000:22"
+    volumes:
+      - './:/home/Hosting/workspace'
+      - '~/.ssh:/home/Hosting/.ssh:ro'
