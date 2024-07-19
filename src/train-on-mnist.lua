@@ -41,6 +41,7 @@ local opt = lapp[[
    --coefL1           (default 0)           L1 penalty on the weights
    --coefL2           (default 0)           L2 penalty on the weights
    -t,--threads       (default 4)           number of threads
+   -e,--epoch         (default 10)          train epoch
 ]]
 
 -- fix seed
@@ -344,6 +345,10 @@ while true do
    -- train/test
    train(trainData)
    test(testData)
+
+   if (epoch == opt.epoch) then
+      break;
+   end
 
    -- plot errors
    if opt.plot then
